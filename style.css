@@ -1,8 +1,10 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f4f6f8;
     color: #333;
+    animation: fadeIn 1.5s ease-in;
 }
 
 header {
@@ -24,14 +26,23 @@ h2 {
     padding-bottom: 5px;
 }
 
+/* Weekly Task Boxes */
 .week {
     background-color: white;
     padding: 15px;
     margin: 15px 0;
     border-left: 5px solid #3498db;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s;
 }
 
+.week:hover {
+    background-color: #e8f6f3;
+    border-left: 5px solid #2ecc71;
+    transform: translateX(5px);
+}
+
+/* Profile Table */
 table.profile-table {
     width: 100%;
     border-collapse: collapse;
@@ -48,6 +59,12 @@ table.profile-table td {
 table.profile-table th {
     background-color: #3498db;
     color: white;
+}
+
+table.profile-table tr:hover {
+    background-color: #d6eaf8;
+    transform: scale(1.01);
+    transition: 0.3s;
 }
 
 footer {
@@ -77,4 +94,41 @@ footer {
         font-weight: bold;
         text-align: left;
     }
+}
+
+/* Tooltip Styling */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted #3498db;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  margin-left: -110px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
